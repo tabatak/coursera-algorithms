@@ -1,5 +1,6 @@
 const assert = require('assert');
 const fibonacci = require('./fibonacci.js');
+const gcd = require('./greatest_common_divisor.js');
 
 describe('fibonacci test', function(){
 
@@ -33,3 +34,35 @@ describe('fibonacci test', function(){
   });
 
 });
+
+describe('Greatest Common Divisor test', function(){
+  
+    it("0 0", () => {
+      assert.equal(gcd.gcdNv(0, 0), 0);
+      assert.equal(gcd.gcd(0, 0), 0);
+    });
+    it("1 2", () => {
+      assert.equal(gcd.gcdNv(1, 2), 1);
+      assert.equal(gcd.gcd(1, 2), 1);
+    });
+    it("5 7", () => {
+      assert.equal(gcd.gcdNv(5, 7), 1);
+      assert.equal(gcd.gcd(5, 7), 1);
+    });
+    it("2 10", () => {
+      assert.equal(gcd.gcdNv(2, 10), 2);
+      assert.equal(gcd.gcd(2, 10), 2);
+    });
+  
+    it("ストレステスト", () => {
+      for(let i = 0; i < 100; i++){
+        const a = Math.floor(Math.random() * (1000000 + 1 - 0) ) + 0;
+        const b = Math.floor(Math.random() * (1000000 + 1 - 0) ) + 0;
+        const resultSlow = gcd.gcdNv(a, b);
+        const resultFast = gcd.gcd(a, b);
+  
+        assert.equal(resultSlow, resultFast, `[input a: ${a}, b: ${b}]`);
+      }
+    });
+  
+  });
