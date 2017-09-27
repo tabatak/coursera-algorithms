@@ -1,4 +1,3 @@
-let bigInt = require("big-integer");
 let readline = require('readline');
 let lines = [];
 process.stdin.setEncoding('utf8');
@@ -22,10 +21,10 @@ function readLine (line) {
 
 const fibonacciLastDigit = (num) => {
   let fibarr = [];
-  fibarr[0] = bigInt.zero;
-  fibarr[1] = bigInt.one;
+  fibarr[0] = 0;
+  fibarr[1] = 1;
   for(let i = 2; i <= num; i++){
-    fibarr[i] = fibarr[i-1].add(fibarr[i-2]);
+    fibarr[i] = fibarr[i-1] + fibarr[i-2];
   }
-  return fibarr[num].mod(10).value;
+  return fibarr[num] % 10;
 };
