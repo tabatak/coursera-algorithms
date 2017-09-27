@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bench": "^0.3.6"
+    "bench": "^0.3.6",
+    "big-integer": "^1.6.25"
   }
 }
