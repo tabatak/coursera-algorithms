@@ -24,7 +24,7 @@ const fibonacciLastDigit = (num) => {
   fibarr[0] = 0;
   fibarr[1] = 1;
   for(let i = 2; i <= num; i++){
-    fibarr[i] = fibarr[i-1] + fibarr[i-2];
+    fibarr[i] = (fibarr[i-1] % 10) + (fibarr[i-2] % 10);
   }
   return fibarr[num] % 10;
 };
