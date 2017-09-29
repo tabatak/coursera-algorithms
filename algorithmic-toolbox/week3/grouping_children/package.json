@@ -1,0 +1,11 @@
+{
+  "name": "grouping_children",
+  "version": "1.0.0",
+  "description": "",
+  "main": "grouping_children.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
